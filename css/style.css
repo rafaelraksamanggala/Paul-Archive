@@ -1,0 +1,528 @@
+:root {
+    --primary: #4c75ce;
+    --bg: #012946; 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    min-height: 2000px;
+    
+}
+
+/* Transitions Page */
+body {
+    transition: opacity 0.05s ease;
+}
+
+body.fade-out {
+    opacity: 0.5;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgba(1, 41, 70, 0.8);
+    border-bottom: 2.5px solid #fafafa;
+    position: fixed ;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar .navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.navbar .navbar-logo span{
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+    color: #fff;
+    display: inline-block;
+    font-size: larger;
+    margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar .navbar-nav a::after {
+    content: '';
+    display: block;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid var(--primary);
+    transform: scaleX(0);
+    transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+    color: #fff;
+    margin: 0 0.5rem;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+    padding-right: 1rem;
+
+}
+.navbar .navbar-extra a:hover {
+    color: var(--primary);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../img/3d-cartoon-night-sky.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+    0deg,
+    rgba(1,1,3,1) 3%,
+    rgba(255,255,255,0) 25%
+    );
+}
+
+.hero .content {
+    padding: 1.4rem 7%;
+    max-width: 60rem;
+}
+
+.hero .content h1 {
+    font-size: 5em;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    line-height: 1.2;
+}
+
+.hero .content h1 span {
+    color: var(--primary);
+}
+
+.hero .content p {
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+    line-height: 1.4;   
+    font-weight: 100;
+    text-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+    mix-blend-mode: difference;
+}
+
+.hero .content .cta {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
+}
+
+/* layer transparan di atas background */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  background: rgba(0, 0, 0, 0.2); /* atur transparansi di sini */
+}
+
+/* supaya konten tetap di atas overlay */
+.hero > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* About Section */
+.about, .notes {
+    padding: 8rem 7% 1.4rem;
+}
+
+.about h2, .notes h2 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+}
+
+.about .row {
+    display: flex;
+}
+
+.about .row .about-img {
+    flex: 1 1 10rem;
+}
+
+.about .row .about-img img {
+    width: 100%;
+}
+
+.about .row .content {
+    flex: 1 1 35rem;
+    padding: 0 1rem;
+}
+
+.about .row .content h3 { 
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.about .row .content p {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    font-weight: 100;
+    line-height: 1.6;
+    text-align: justify;
+
+}
+
+/* Notes Section  START */
+
+.notes h2 {
+    margin-bottom: 1rem;
+}
+
+.notes p {
+    text-align: center;
+    max-width: 30rem;
+    margin: auto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+/* SEMESTER GRID */
+.semester-grid{
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(180px, 1fr));
+    gap: 1.25rem;
+    
+}
+
+/* DETAIL CARD */
+.sem{
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(255,255,255,0.06);
+    overflow: hidden;
+    transition: border-color .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+/* remove default marker */
+.sem > summary{
+    list-style: none;
+}
+.sem > summary::-webkit-details-marker{
+    display: none;
+}
+
+/* SEMESTER "BUTTON" */
+.sem-btn{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1.1rem 1.15rem;
+    user-select: none;
+}
+
+.sem-num{
+    width: 44px;
+    height: 44px;
+    border-radius: 14px; /* rounded square */
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    background: rgba(90,140,255,0.22);
+    border: 1px solid rgba(90,140,255,0.35);
+}
+
+.sem-text{
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    opacity: 0.95;
+    flex: 1;
+}
+
+.sem-btn::after{
+    content: "▾";
+    opacity: 0.75;
+    transform: translateY(-1px);
+    transition: transform .18s ease, opacity .18s ease;
+}
+
+/* Hover */
+.sem:hover{
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(90,140,255,0.35);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+}
+
+/* Open state */
+.sem[open]{
+    border-color: rgba(90,140,255,0.65);
+}
+.sem[open] .sem-btn::after{
+    transform: rotate(180deg);
+    opacity: 0.95;
+}
+
+/* COURSE PANEL */
+.course-panel{
+    padding: 0 1.15rem 1.15rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+}
+
+/* COURSE BUTTONS */
+.course-btn{
+    text-decoration: none;
+    color: rgba(255,255,255,0.92);
+    padding: 0.85rem 0.95rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: rgba(0,0,0,0.22);
+    transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.course-btn:hover{
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.07);
+    border-color: rgba(90,140,255,0.45);
+}
+
+/* biar default (closed) cuma tampil header/summary */
+details.sem:not([open]) .course-panel {
+  display: none;
+}
+
+details.sem:not([open]) .course-panel {
+  display: none;
+}
+details.sem[open] .course-panel {
+  display: grid;
+}
+
+details.sem {
+  height: auto;
+  min-height: 0;
+  align-self: start; /* biar tidak ikut stretch */
+}
+
+.semester-grid{
+  align-items: start;
+}
+
+/* Notes Section END */
+
+/* Footer Start */
+footer {
+    background-color: #012946;
+    text-align: center;
+    padding: 1rem 0 2rem;
+    margin-top: 3rem;
+}
+
+footer .socials {
+    padding: 1rem 0;
+}
+
+footer .socials a {
+    color: #fff;
+    margin: 1rem;
+}
+
+footer .socials a:hover, footer .links a:hover {
+    color: #4c75ce;
+}
+
+footer .links {
+    margin-bottom: 1.2rem;
+}
+
+footer .links a {
+    color: #fff;
+    padding: 0.7rem 1rem;
+}
+
+footer .credit {
+    font-size: small;
+}
+
+footer .credit a {
+    color: #007db6;
+    font-weight: 700;
+}
+
+.socials {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;        /* jarak ikon & teks */
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.9;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.socials a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.socials i {
+  width: 18px;
+  height: 18px;
+}
+
+/* Footer End */
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html{
+        font-size: 75%;
+    }
+    .about .row .about-img img {
+        height: 30rem;
+        object-fit: cover;
+        object-position: center;
+        
+    }
+
+    .semester-grid{
+    grid-template-columns: repeat(3, minmax(180px, 1fr));}
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+    html{
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu {
+    display:inline-block ;}
+    
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #fff;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.5s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: var(--bg);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+    
+    .navbar .navbar-nav a::after {
+        transform-origin: 0 0;
+    }
+
+    .navbar .navbar-nav a:hover::after {
+        transform: scaleX(0.2);
+    }
+
+    .about .row{
+        display: flex;
+        align-items: flex-start;
+        gap: 2rem;              /* ini yang bikin tidak nempel */
+        flex-wrap: wrap;        /* kalau sempit, otomatis turun baris */
+}
+
+    .about .row .about-img img {
+        height: 36rem;
+        object-fit: cover;
+        object-position: center;
+        
+    }
+
+
+    .about .row .content {
+        padding: 0;
+        flex: 1 1 420px; 
+    }
+
+    .about .row .content h3 {
+        margin-top: 1rem;
+        font-size: 2rem;
+    }
+
+    .about .row .content p {
+        font-size: 1.6rem;
+        margin-top: 1rem;
+    }
+
+    .semester-grid{
+    grid-template-columns: repeat(2, minmax(180px, 1fr));}
+}
+    
+/* Handphone */
+@media (max-width: 450px) {
+    html{
+        font-size: 55%;
+    }
+    .semester-grid{
+    grid-template-columns: 1fr;}
+}
