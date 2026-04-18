@@ -16,8 +16,11 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #000000;
     color: #ffffff;
-    min-height: 2000px;
-    
+
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* Transitions Page */
@@ -173,6 +176,12 @@ body.fade-out {
 /* About Section */
 .about, .notes {
     padding: 8rem 7% 1.4rem;
+}
+
+notes {
+    flex: 1;
+    min-height: 100vh;
+    min-height: 100dvh; /* penting untuk mobile */
 }
 
 .about h2, .notes h2 {
