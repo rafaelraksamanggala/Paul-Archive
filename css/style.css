@@ -21,7 +21,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow: hidden;
 }
 
 /* Transitions Page */
@@ -181,9 +180,6 @@ body.fade-out {
 
 .notes {
     flex: 1;
-    min-height: 100vh;
-    min-height: 100dvh;
-    overflow-y: auto;
 }
 
 .about h2, .notes h2 {
