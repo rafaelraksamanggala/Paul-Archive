@@ -3,6 +3,11 @@
     --bg: #012946; 
 }
 
+html {
+    scroll-behavior: smooth;
+    overscroll-behavior: none;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -180,7 +185,8 @@ body.fade-out {
 
 .notes {
     flex: 1;
-    padding-bottom: 4rem;
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+    -webkit-overflow-scrolling: touch;
 }
 
 .about h2, .notes h2 {
