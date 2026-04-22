@@ -184,8 +184,7 @@ body.fade-out {
 
 .notes {
     flex: 1;
-    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
-    -webkit-overflow-scrolling: touch;
+    padding-top: 10rem; 
 }
 
 .about h2, .notes h2 {
