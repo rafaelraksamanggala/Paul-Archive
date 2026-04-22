@@ -180,6 +180,7 @@ body.fade-out {
 
 .notes {
     flex: 1;
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
 }
 
 .about h2, .notes h2 {
